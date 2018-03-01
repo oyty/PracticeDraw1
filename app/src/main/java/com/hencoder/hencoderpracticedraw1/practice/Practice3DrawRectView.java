@@ -2,11 +2,17 @@ package com.hencoder.hencoderpracticedraw1.practice;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
 public class Practice3DrawRectView extends View {
+
+    Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    Rect rect = new Rect(100, 500, 500, 700);
 
     public Practice3DrawRectView(Context context) {
         super(context);
@@ -25,5 +31,15 @@ public class Practice3DrawRectView extends View {
         super.onDraw(canvas);
 
 //        练习内容：使用 canvas.drawRect() 方法画矩形
+        canvas.drawRect(100, 200, 500, 400, paint);
+
+        canvas.drawRect(rect, paint);
+
+        /**
+         * Rect RectF区别在于精度，一个是int，一个是float
+         */
+        RectF rectF = new RectF();
+
     }
+
 }
